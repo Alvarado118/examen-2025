@@ -1,0 +1,26 @@
+
+a. Decisiones tomadas:
+- Se utilizó la estructura de datos 'clase' para definir la entidad 'Product' con campos Id, Name, Price y Stock, adecuados para representar un producto típico en inventario.
+- Los archivos fueron separados por responsabilidades:
+  Models/Product.cs: entidad del modelo de datos.
+  Data/AppDbContext.cs: contexto de base de datos con EF Core.
+  Controllers/ProductsController.cs: controlador REST con endpoints para CRUD.
+  appsettings.json: configuración, incluida la cadena de conexión.
+  Program.cs: configuración de servicios, Swagger, autenticación y routing.
+
+b. Comandos para migraciones (Entity Framework Core):
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+c. Comandos Docker utilizados:
+docker run --name mysql-productos -e MYSQL_ROOT_PASSWORD=admin123 -e MYSQL_DATABASE=productosdb -p 3306:3306 -d mysql:latest
+
+d. Partes creadas manualmente y con IA:
+- Manualmente:
+  Diseño de la entidad Product.
+  Configuración básica de conexión en appsettings.json.
+  Lógica y validaciones básicas en el controlador.
+- Con asistencia de IA:
+  Generación de estructura del proyecto, organización por carpetas.
+  Código Swagger con autenticación por token en Program.cs.
+  Documentación y ejemplos.
